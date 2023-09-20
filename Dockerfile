@@ -9,7 +9,7 @@
 FROM centos:7
 RUN yum update -y
 RUN yum install -y httpd
-RUN echo -e 'Hello World AWS EKS CI/CD TEST ver2' > /var/www/html/index.html
+RUN echo -e 'Hello World AWS EKS CI/CD TEST ver3' > /var/www/html/index.html
 Run sed -i "s#LogLevel warn#LogLevel debug#g" /etc/httpd/conf/httpd.conf
 Run sed -i 's#    CustomLog "logs/access_log" combined#    CustomLog "/var/log/msrnd" combined#g' /etc/httpd/conf/httpd.conf
 RUN ln -sf /dev/stdout /var/log/msrnd
