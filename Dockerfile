@@ -11,8 +11,9 @@ RUN yum update -y
 RUN yum install -y httpd
 RUN echo -e 'Hello World AWS EKS CI/CD TEST' > /var/www/html/index.html
 Run sed -i "s#LogLevel warn#LogLevel debug#g" /etc/httpd/conf/httpd.conf
+Run sed -i 's#    CustomLog "logs/access_log" combined#    CustomLog "/var/log/msrnd" combined#g' /etc/httpd/conf/httpd.conf
 ## 로그 출력
-RUN ln -sf /dev/stdout /var/log/msrnd \
-    && ln -sf /dev/stderr /var/log/msrnd
+RUN ln -sf /dev/stdout /var/log/msrnd
 
 CMD ["httpd", "-D", "FOREGROUND"]
+
