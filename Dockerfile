@@ -10,5 +10,9 @@ FROM centos:7
 RUN yum update -y
 RUN yum install -y httpd
 RUN echo -e 'Hello World AWS EKS CI/CD TEST' > /var/www/html/index.html
-Run sed -i "s#LogLevel warn#LogLevel debug#g" /etc/httpd/conf/httpd.conf 
+Run sed -i "s#LogLevel warn#LogLevel debug#g" /etc/httpd/conf/httpd.conf
+## 로그 출력
+RUN ln -sf /dev/stdout /var/log/httpd/access_log \
+    && ln -sf /dev/stderr /var/log/httpd/error_log
+
 CMD ["httpd", "-D", "FOREGROUND"]
