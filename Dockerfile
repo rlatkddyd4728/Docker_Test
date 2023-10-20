@@ -9,7 +9,7 @@
 FROM centos:7
 RUN yum update -y
 RUN yum install -y httpd
-RUN echo -e 'Hello World AWS ECS test Ver 120' > /var/www/html/index.html
+RUN echo -e 'Hello World AWS ECS test Ver 200' > /var/www/html/index.html
 # RUN sed -i "s#LogLevel warn#LogLevel debug#g" /etc/httpd/conf/httpd.conf
 # RUN mkdir /var/log/msrnd
 # RUN sed -i 's#CustomLog "logs/access_log" combined#CustomLog "/var/log/msrnd/access_log" combined#g' /etc/httpd/conf/httpd.conf
