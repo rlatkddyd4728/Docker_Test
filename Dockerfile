@@ -6,6 +6,7 @@ COPY index.html /var/www/html/
 COPY healthz.php /var/www/html/
 EXPOSE 80
 
+ 
 # Base image with Python and AWS CLI
 # FROM centos:7
 # RUN yum update -y
