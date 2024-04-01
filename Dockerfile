@@ -4,7 +4,9 @@ FROM php:7.4-apache
 # index.html과 healthz.php 파일을 복사합니다.
 COPY index.html /var/www/html/
 COPY healthz.php /var/www/html/
-EXPOSE 80
+
+RUN sed -i "s#Listen 80#Listen 8080#g" /etc/httpd/conf/httpd.conf
+EXPOSE 8080
 
 # Base image with Python and AWS CLI
 # FROM centos:7
