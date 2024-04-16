@@ -13,5 +13,5 @@ FROM centos:7
 RUN yum update -y
 RUN yum install -y httpd
 RUN echo -e 'Hello World test Ver 20' > /var/www/html/index.html
-RUN sed -i "s#Listen 80#Listen 8080#g" /etc/httpd/conf/httpd.conf
+# RUN sed -i "s#Listen 80#Listen 8080#g" /etc/httpd/conf/httpd.conf
 CMD ["httpd", "-D", "FOREGROUND"]
